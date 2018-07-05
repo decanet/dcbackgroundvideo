@@ -276,7 +276,7 @@ public class VideoOverlay extends ViewGroup implements TextureView.SurfaceTextur
 
         if (mStartWhenInitialized) {
             try {
-                Start(this.mFilePath);
+                StartRecording(this.mFilePath, this.mDuration, this.mcallbackContext);
             } catch (Exception ex) {
                 Log.e(TAG, "Error start camera", ex);
             }

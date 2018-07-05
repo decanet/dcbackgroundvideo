@@ -1,5 +1,7 @@
 package cordova.decanet.video;
 
+import android.os.Environment;
+
 import android.content.pm.PackageManager;
 import android.util.DisplayMetrics;
 import android.util.Log;
@@ -11,14 +13,21 @@ import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaInterface;
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.CordovaWebView;
+import android.content.pm.ApplicationInfo;
+import android.content.pm.PackageManager;
+import android.content.pm.PackageManager.NameNotFoundException;
 import org.json.JSONArray;
 import org.json.JSONException;
+import org.json.JSONObject;
+
+import org.apache.cordova.PluginResult;
 
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-
 
 public class DcBackgroundVideo extends CordovaPlugin {
     private static final String TAG = "BACKGROUND_VIDEO";
