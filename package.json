@@ -1,0 +1,53 @@
+{
+  "_from": "git+https://github.com/decanet/dcbackgroundvideo.git",
+  "_id": "dcbackgroundvideo@1.0.0",
+  "_inBundle": false,
+  "_integrity": "sha1-goMzvfRAMFutFfOVh1DWoLoooKU=",
+  "_location": "/dcbackgroundvideo",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "git",
+    "raw": "https://github.com/decanet/dcbackgroundvideo.git",
+    "rawSpec": "https://github.com/decanet/dcbackgroundvideo.git",
+    "saveSpec": "git+https://github.com/decanet/dcbackgroundvideo.git",
+    "fetchSpec": "https://github.com/decanet/dcbackgroundvideo.git",
+    "gitCommittish": "master"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "git+https://github.com/decanet/dcbackgroundvideo.git#f7324e74227467997ea2421c7935a64e8cdbb39f",
+  "_spec": "https://github.com/decanet/dcbackgroundvideo.git",
+  "_where": "C:\\wamp64\\www\\mobile-projects\\BorneVideo",
+  "author": {
+    "name": "decanet"
+  },
+  "bugs": {
+    "url": "https://github.com/decanet/dcbackgroundvideo/issues"
+  },
+  "bundleDependencies": false,
+  "cordova": {
+    "id": "dcbackgroundvideo",
+    "platforms": [
+      "android"
+    ]
+  },
+  "deprecated": false,
+  "description": "A simple Cordova/Phonegap plugin to capture video and preview background affecting app functionality.",
+  "homepage": "https://github.com/decanet/dcbackgroundvideo",
+  "keywords": [
+    "video"
+  ],
+  "license": "GPL3",
+  "main": "index.js",
+  "name": "dcbackgroundvideo",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/decanet/dcbackgroundvideo.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "1.0.0"
+}

@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="dcbackgroundvideo" version="0.0.11" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+  <name>cordova-decanet-backgroundvideo</name>
+  <description>A simple Cordova/Phonegap plugin to capture video and preview onscreen via a transparent overlay without affecting app functionality.</description>
+  <author>Decanet</author>
+  <repo>https://github.com/decanet/dcbackgroundvideo</repo>
+
+  <engines>
+    <engine name="cordova" version=">=4.0.0" />
+  </engines>
+
+  <keywords>video, background, transparent, overlay, recording, camera, cordova</keywords>
+
+  <license>GPL3</license>
+
+
+  <js-module name="dcbackgroundvideo" src="www/dcbackgroundvideo.js">
+    <clobbers target="cordova.plugins.dcbackgroundvideo" />
+  </js-module>
+  
+  <platform name="android">
+
+    <config-file target="res/xml/config.xml" parent="/*">
+      <feature name="dcbackgroundvideo">
+        <param name="android-package" value="cordova.decanet.video.BackgroundVideo"/>
+      </feature>
+    </config-file>
+
+
+    <!-- add permissions in AndroidManifest.xml file-->
+    <config-file target="AndroidManifest.xml" parent="/*">
+      <uses-permission android:name="android.permission.CAMERA" />
+      <uses-permission android:name="android.permission.RECORD_AUDIO" />
+      <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+      <uses-feature android:name="android.hardware.camera" android:required="true" />
+      <uses-feature android:name="android.hardware.camera.front" android:required="false" />
+      <uses-feature android:name="android.hardware.camera.autofocus" android:required="false" />
+    </config-file>
+
+    <source-file src="src/android/DcBackgroundVideo.java" target-dir="src/cordova/decanet/dcbackgroundvideo" />
+    <source-file src="src/android/CameraHelper.java" target-dir="src/cordova/decanet/dcbackgroundvideo" />
+    <source-file src="src/android/VideoOverlay.java" target-dir="src/cordova/decanet/dcbackgroundvideo" />
+  </platform>
+</plugin>
