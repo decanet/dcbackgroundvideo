@@ -34,6 +34,7 @@ public class DcBackgroundVideo extends CordovaPlugin {
     private static final String ACTION_START_PREVIEW = "startpreview";
     private static final String ACTION_START_RECORDING = "startrecording";
     private static final String ACTION_STOP_RECORDING = "stop";
+    private static final String ACTION_STOP_PREVIEW = "stop";
     private static final String FILE_EXTENSION = ".mp4";
     private static final int START_REQUEST_CODE = 0;
 
@@ -59,14 +60,10 @@ public class DcBackgroundVideo extends CordovaPlugin {
             Log.d(TAG, "ACTION: " + action);
 
             if (ACTION_START_RECORDING.equalsIgnoreCase(action)) {
-                boolean recordAudio = args.getBoolean(2);
 
                 List<String> permissions = new ArrayList<String>();
                 if (!cordova.hasPermission(android.Manifest.permission.CAMERA)) {
                     permissions.add(android.Manifest.permission.CAMERA);
-                }
-                if (!cordova.hasPermission(android.Manifest.permission.RECORD_AUDIO)) {
-                    permissions.add(android.Manifest.permission.RECORD_AUDIO);
                 }
                 if (permissions.size() > 0) {
                     cordova.requestPermissions(this, START_REQUEST_CODE, permissions.toArray(new String[0]));
@@ -76,8 +73,23 @@ public class DcBackgroundVideo extends CordovaPlugin {
                 StartRecording(this.requestArgs);
                 return true;
             }
+			
+			 if (ACTION_START_PREVIEW.equalsIgnoreCase(action)) {
 
-            if (ACTION_STOP_RECORDING.equalsIgnoreCase(action)) {
+                List<String> permissions = new ArrayList<String>();
+                if (!cordova.hasPermission(android.Manifest.permission.CAMERA)) {
+                    permissions.add(android.Manifest.permission.CAMERA);
+                }
+                if (permissions.size() > 0) {
+                    cordova.requestPermissions(this, START_REQUEST_CODE, permissions.toArray(new String[0]));
+                    return true;
+                }
+
+                StartPreview(this.requestArgs);
+                return true;
+            }
+			
+            if (ACTION_STOP_PREVIEW.equalsIgnoreCase(action)) {
                 Stop();
                 return true;
             }
