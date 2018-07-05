@@ -22,7 +22,7 @@
 
     <config-file target="res/xml/config.xml" parent="/*">
       <feature name="dcbackgroundvideo">
-        <param name="android-package" value="cordova.decanet.video.BackgroundVideo"/>
+        <param name="android-package" value="cordova.decanet.video.DcBackgroundVideo"/>
       </feature>
     </config-file>
 
